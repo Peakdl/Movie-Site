@@ -6,7 +6,7 @@ import { Movie, PrismaClient, User,Comment} from "@prisma/client";
 const prisma = new PrismaClient()
 const app = express()
 app.use(express.json())
-const port = 3001
+const port = 3002
 
 
 connectDB()
@@ -118,7 +118,7 @@ app.delete('/deleteComment/:id', async (req: Request, res: Response) => {
 
 
 app.listen(port, () => {
-    console.log(' server listing 3001');
+    console.log(' server listing 3002');
 
 })
 
