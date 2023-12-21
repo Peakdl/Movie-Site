@@ -2,15 +2,15 @@ import express, { Request, Response, request, response } from "express"
 import { v4 as uuidv4 } from 'uuid';
 import { connectDB } from "./config/db";
 import { Movie, PrismaClient, User,Comment} from "@prisma/client";
-//------------------------o----------</\>-----------o-------------------------\\
 const prisma = new PrismaClient()
 const app = express()
 app.use(express.json())
 const port = 3002
-
+//------------------------o----------</\>-----------o-------------------------\\
 
 connectDB()
 
+//------------------------o----------</\>-----------o-------------------------\\
 app.post('/addUser',async  (req: Request, res: Response) => {
     const newUser = req.body as User;
 
@@ -90,6 +90,7 @@ app.get('/FindmovieComments/:id',async(req:Request,res:Response)=>{
     })
       res.json(Movieid);
 })
+//------------------------o----------</\>-----------o-------------------------\\
 app.post('/addComment',async  (req: Request, res: Response) => {
     const commentnew = req.body as Comment;
 
@@ -116,7 +117,7 @@ app.delete('/deleteComment/:id', async (req: Request, res: Response) => {
 })
 
 
-
+//------------------------o----------</\>-----------o-------------------------\\
 app.listen(port, () => {
     console.log(' server listing 3002');
 
